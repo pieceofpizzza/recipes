@@ -18,13 +18,13 @@ enum Paged {
             self.rawValue
         }
         
-        var title: String {
-            switch self {
-            case .recipesList: return "Recipes"
-            case .addRecipe: return "Add"
-            case .favourites: return "Favourites"
-            }
-        }
+//        var title: String {
+//            switch self {
+//            case .recipesList: return "Recipes"
+//            case .addRecipe: return "Add"
+//            case .favourites: return "Favourites"
+//            }
+//        }
         
         var image: Image {
             switch self {

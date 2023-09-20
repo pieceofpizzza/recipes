@@ -12,15 +12,16 @@ extension AddRecipe {
         
         static let title = "Добавить рецепт"
         static let titleFont = Font.title3
-//        static let 
-        struct Selector {
-            static let pagedPanelBack = Color.gray
-        }
-        
-        struct SelectorItem {
-            static let flowItemSide: CGFloat = 20
-            static let flowItemTint = Color.white
-        }
+        static let titleTint = Color.white
+        static let titleBackground = Color.gray
+//        struct Selector {
+//            static let pagedPanelBack = Color.gray
+//        }
+//
+//        struct SelectorItem {
+//            static let flowItemSide: CGFloat = 20
+//            static let flowItemTint = Color.white
+//        }
         
     }
 }

@@ -12,20 +12,27 @@ struct AddRecipeView: View {
     @ObservedObject var vm: AddRecipeViewModel = AddRecipeViewModel()
     
     var body: some View {
-        VStack {
-            Text(Design.title)
-                .font(.title3)
-                .foregroundColor(.gray)
-                .padding(.horizontal, 10)
-                .padding(.top, 50)
+        VStack{
+            HStack {
+                Spacer()
+                Text(Design.title)
+                    .font(Design.titleFont)
+                    .tint(Design.titleTint)
+                    .padding(.horizontal, 20)
+                    .padding(.top, 50)
+                Spacer()
+                
+
+            }
+            .padding()
+            .background(Design.titleBackground)
 
             Spacer()
-                    Text("Наименование")
-                        .foregroundColor(.black)
-                    Text("Описание")
-                        .foregroundColor(.black)
+            Text("Наименование")
+                .foregroundColor(.black)
+            Text("Описание")
+                .foregroundColor(.black)
             Spacer()
         }
-        .padding()
     }
 }
