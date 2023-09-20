@@ -111,10 +111,10 @@
 		61815EAE2AA8CB74003236AE /* screens */ = {
 			isa = PBXGroup;
 			children = (
-				61815EC82AB9F47C003236AE /* favourites */,
 				61815EBF2AB202FB003236AE /* paged */,
-				61815EB02AA8CBAC003236AE /* addrecipe */,
 				61815EAF2AA8CB92003236AE /* recipeslist */,
+				61815EC82AB9F47C003236AE /* favourites */,
+				61815EB02AA8CBAC003236AE /* addrecipe */,
 			);
 			path = screens;
 			sourceTree = "<group>";

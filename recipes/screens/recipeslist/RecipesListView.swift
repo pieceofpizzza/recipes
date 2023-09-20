@@ -15,24 +15,25 @@ struct RecipesListView: View {
         VStack{
             HStack{
                 Spacer()
-                Text("Каталог рецептов")
-                    .font(.title3)
-                    .foregroundColor(.white)
+                Text(Design.title)
+                    .font(Design.titleFont)
+                    .foregroundColor(Design.titleForeground)
                     .padding(.vertical, 5)
-                    .padding(.top, 70)
+                    .padding(.top, 50)
                 Spacer()
                 
             }
+            .padding()
             .background(Color.gray)
             
             List {
                 ForEach(vm.recipes) { recipe in
                     HStack {
                         Text(recipe.title)
-                            .foregroundColor(Design.textcolor)
+                            .foregroundColor(Design.recipeTitle.recipeTitleForeground)
                         Spacer()
                         Text("\(recipe.calories)")
-                            .foregroundColor(Design.textcolor)
+                            .foregroundColor(Design.recipeCalories.recipeCaloriesForeground)
                     }
                 }
             }

@@ -17,16 +17,16 @@ struct AddRecipeView: View {
                 Spacer()
                 Text(Design.title)
                     .font(Design.titleFont)
-                    .tint(Design.titleTint)
-                    .padding(.horizontal, 20)
+                    .foregroundColor(Design.titleForeground)
+                    .padding(.vertical, 5)
                     .padding(.top, 50)
                 Spacer()
                 
-
+                
             }
             .padding()
             .background(Design.titleBackground)
-
+            
             Spacer()
             Text("Наименование")
                 .foregroundColor(.black)

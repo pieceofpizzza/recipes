@@ -9,6 +9,19 @@ import SwiftUI
 
 extension RecipesList {
     struct Design {
-        static let textcolor = Color.black
+        static let title = "Каталог рецептов"
+        static let titleFont = Font.title3
+        static let titleForeground = Color.white
+        static let titleBackground = Color.gray
+        
+        struct recipeTitle {
+            static let recipeTitleFont = Font.title
+            static let recipeTitleForeground = Color.black
+        }
+        
+        struct recipeCalories {
+            static let recipeCaloriesFont = Font.title
+            static let recipeCaloriesForeground = Color.gray
+        }
     }
 }

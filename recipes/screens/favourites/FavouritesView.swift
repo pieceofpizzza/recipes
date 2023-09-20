@@ -10,8 +10,8 @@ import SwiftUI
 struct FavouritesView: View {
     typealias Design = Favourites.Design
     
-//    @Environment(\.colorScheme) var colorScheme
-//    @Namespace var namespace
+    //    @Environment(\.colorScheme) var colorScheme
+    //    @Namespace var namespace
     
     let viewModel: FavouritesViewModel
     
@@ -19,29 +19,18 @@ struct FavouritesView: View {
         VStack{
             HStack{
                 Spacer()
-                Text("Избранное")
-                    .font(.title3)
-                    .foregroundColor(.white)
+                Text(Design.title)
+                    .font(Design.titleFont)
+                    .foregroundColor(Design.titleForeground)
                     .padding(.vertical, 5)
-                    .padding(.top, 70)
+                    .padding(.top, 50)
                 Spacer()
                 
             }
-            .background(Color.gray)
+            .padding()
+            .background(Design.titleBackground)
             Spacer()
-            
-//            List {
-//                ForEach(vm.recipes) { recipe in
-//                    HStack {
-//                        Text(recipe.title)
-//                            .foregroundColor(Design.textcolor)
-//                        Spacer()
-//                        Text("\(recipe.calories)")
-//                            .foregroundColor(Design.textcolor)
-//                    }
-//                }
-//            }
         }
-
+        
     }
 }
