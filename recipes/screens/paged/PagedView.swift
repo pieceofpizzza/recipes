@@ -25,8 +25,7 @@ struct PageContentView: View {
     var body: some View {
         Group {
             switch vm.currentFlowItem {
-            case .recipesList: vm.getRecipeListView()
-            case .addRecipe: vm.getAddRecipeView()
+            case .recipesList: vm.getRecipesListView()
             case .favourites: vm.getFavouritesView()
             }
         }

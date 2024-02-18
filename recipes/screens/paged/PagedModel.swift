@@ -11,8 +11,7 @@ import SwiftUI
 enum Paged {
     enum Flow: Int, Identifiable {
         case recipesList = 0
-        case addRecipe = 1
-        case favourites = 2
+        case favourites = 1
         
         var id: Int {
             self.rawValue
@@ -29,11 +28,17 @@ enum Paged {
         var image: Image {
             switch self {
             case .recipesList: return Image(systemName: "list.bullet.clipboard")
-            case .addRecipe: return Image(systemName: "plus")
             case .favourites: return Image(systemName: "heart")
             }
         }
     }
+    
+//    struct Recipe: Identifiable {
+//        var id: Int
+//        let title: String
+//        let calories: Int
+//        var isLiked: Bool
+//    }
 }
 
 

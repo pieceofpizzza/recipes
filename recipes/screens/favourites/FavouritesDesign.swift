@@ -13,6 +13,16 @@ extension Favourites {
         static let titleFont = Font.title3
         static let titleForeground = Color.white
         static let titleBackground = Color.gray
+        struct RecipeItem {
+            struct RecipeTitle {
+                static let recipeTitleFont = Font.title
+                static let recipeTitleForeground = Color.black
+            }
+            struct RecipeCalories {
+                static let recipeCaloriesFont = Font.title
+                static let recipeCaloriesForeground = Color.gray
+            }
+        }
     }
     
 }

@@ -13,7 +13,7 @@ struct FavouritesView: View {
     //    @Environment(\.colorScheme) var colorScheme
     //    @Namespace var namespace
     
-    let viewModel: FavouritesViewModel
+    @ObservedObject var vm: FavouritesViewModel
     
     var body: some View {
         VStack{
@@ -28,9 +28,45 @@ struct FavouritesView: View {
                 
             }
             .padding()
-            .background(Design.titleBackground)
-            Spacer()
+            .background(Color.gray)
+            
+            List {
+                ForEach(vm.recipes) { recipe in
+                    FavouriteRecipeItem(recipe: recipe) {
+                        vm.pressLike(on: recipe)
+                    }
+                }
+            }
         }
-        
+    }
+}
+
+struct FavouriteRecipeItem: View {
+    typealias Design = Favourites.Design.RecipeItem
+    
+    let recipe: Recipe
+    let pressLike: () -> Void
+    
+    var body: some View{
+        HStack {
+            Text(recipe.title)
+                .foregroundColor(Design.RecipeTitle.recipeTitleForeground)
+            Spacer()
+            Text("\(recipe.calories)")
+                .foregroundColor(Design.RecipeCalories.recipeCaloriesForeground)
+            Button {
+                pressLike()
+            } label: {
+                if recipe.isLiked {
+                    Image(systemName: "heart.fill")
+                        .foregroundColor(.green)
+                } else {
+                    Image(systemName: "heart")
+                        .foregroundColor(.gray)
+                }
+               
+            }
+
+        }
     }
 }

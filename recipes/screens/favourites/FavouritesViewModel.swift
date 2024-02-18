@@ -9,26 +9,41 @@ import Combine
 import SwiftUI
 
 class FavouritesViewModel: ObservableObject {
-    private weak var parentVM: PagedViewModel?
+    @Published var recipes: [Recipe] = []
     
+    internal var cancellables: Set<AnyCancellable> = []
+    
+    private weak var parentVM: PagedViewModel?
     
     init(parentVM: PagedViewModel?) {
         self.parentVM = parentVM
+        subscription()
     }
     
     deinit {
         parentVM = nil
+        cancellables.forEach({ $0.cancel() })
+        cancellables = []
     }
     
-    func pressHelp() {
-        print("pressHelp")
+    func pressLike(on recipe: Recipe) {
+        parentVM?.pressLike(on: recipe)
+    }
+    
+    func subscription() {
+        parentVM?.recipes
+            .map{ $0.filter({ $0.isLiked })  }
+            .sink(receiveValue: { value in
+            self.recipes = value
+        })
+        .store(in: &cancellables)
     }
 }
 
 
 extension FavouritesViewModel: ViewMaker {
     func getView() -> any View {
-        FavouritesView(viewModel: self)
+        FavouritesView(vm: self)
     }
 }
 

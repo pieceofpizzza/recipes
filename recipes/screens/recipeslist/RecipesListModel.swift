@@ -8,9 +8,12 @@
 import Foundation
 
 enum RecipesList {
-    struct Recipe: Identifiable {
-        var id: UUID = UUID()
-        let title: String
-        let calories: Int
+    struct ViewItemData: Identifiable {
+    let id: Double = Date().timeIntervalSince1970
+    let recipe: Recipe
+    let isNew: Bool
     }
 }
+
+
+

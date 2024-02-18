@@ -14,14 +14,19 @@ extension RecipesList {
         static let titleForeground = Color.white
         static let titleBackground = Color.gray
         
-        struct recipeTitle {
-            static let recipeTitleFont = Font.title
-            static let recipeTitleForeground = Color.black
-        }
         
-        struct recipeCalories {
-            static let recipeCaloriesFont = Font.title
-            static let recipeCaloriesForeground = Color.gray
+        
+
+        
+        struct RecipeItem {
+            struct RecipeTitle {
+                static let recipeTitleFont = Font.title
+                static let recipeTitleForeground = Color.black
+            }
+            struct RecipeCalories {
+                static let recipeCaloriesFont = Font.title
+                static let recipeCaloriesForeground = Color.gray
+            }
         }
     }
 }
